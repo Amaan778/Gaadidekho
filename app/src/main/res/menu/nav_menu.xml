@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_favorite"
+        android:icon="@drawable/heart"
+        android:title="Favorite"/>
+
+    <item
+        android:id="@+id/nav_booking"
+        android:icon="@drawable/calendar"
+        android:title="My Bookings"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/user"
+        android:title="My profile"/>
+
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/shares"
+        android:title="Share App"/>
+
+    <item
+        android:id="@+id/nav_rate"
+        android:icon="@drawable/star"
+        android:title="Rate Us"/>
+
+    <item
+        android:id="@+id/nav_privacy"
+        android:icon="@drawable/padlock"
+        android:title="Privacy Policy"/>
+
+    <item
+        android:id="@+id/nav_contact"
+        android:icon="@drawable/email"
+        android:title="Contact us"/>
+
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/more"
+        android:title="About Us"/>
+
+</menu>

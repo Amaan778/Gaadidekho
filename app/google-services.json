@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "289326496677",
+    "firebase_url": "https://gadidekho-41662-default-rtdb.firebaseio.com",
+    "project_id": "gadidekho-41662",
+    "storage_bucket": "gadidekho-41662.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289326496677:android:6c58c94d2b6577ac93864c",
+        "android_client_info": {
+          "package_name": "com.app.gadiadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUOEyAer8Ke9o8sLM1Uvahw5fyHXStNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289326496677:android:93cf3bc06b20b5bc93864c",
+        "android_client_info": {
+          "package_name": "com.app.gadicustomer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUOEyAer8Ke9o8sLM1Uvahw5fyHXStNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
