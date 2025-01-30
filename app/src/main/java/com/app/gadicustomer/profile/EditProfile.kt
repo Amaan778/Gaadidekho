@@ -57,6 +57,38 @@ class EditProfile : AppCompatActivity() {
                 }
             })
 
+            btn.setOnClickListener {
+                val first=firstname.text.toString().trim()
+                val last=lastname.text.toString().trim()
+                val num=number.text.toString().trim()
+                val id=uid.toString()
+
+                database = FirebaseDatabase.getInstance().getReference("users")
+
+                if (uid.isNotEmpty()){
+
+                    val user= mapOf<String,String>(
+                        "firstname" to first,
+                        "lastname" to last,
+                        "number" to num
+                    )
+
+                    database.child(id).updateChildren(user)
+                        .addOnSuccessListener {
+                            Toast.makeText(this,"Data updated",Toast.LENGTH_LONG).show()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this,"Data not updated",Toast.LENGTH_LONG).show()
+                        }
+
+                }
+                else{
+                    Toast.makeText(this,"Error in uid",Toast.LENGTH_LONG).show()
+                }
+
+
+            }
+
         }
     }
 }

@@ -89,36 +89,59 @@ class ProfileFragment : Fragment() {
             }
 
             bookinglinear.setOnClickListener {
-                startActivity(Intent(requireContext(),BookingFragment::class.java))
+                val bundle = Bundle().apply {
+                    putString("key", "About us")
+                }
+
+                navigateToFragment(BookingFragment(), R.id.fragmentcontainer, bundle)
+
             }
 
             shareapp.setOnClickListener {
-                startActivity(Intent(requireContext(),ShareFragment::class.java))
+                val bundle = Bundle().apply {
+                    putString("key", "About us")
+                }
+
+                navigateToFragment(ShareFragment(), R.id.fragmentcontainer, bundle)
+
             }
 
             privacypolicy.setOnClickListener {
-                startActivity(Intent(requireContext(),PrivacyFragment::class.java))
+                val bundle = Bundle().apply {
+                    putString("key", "About us")
+                }
+
+                navigateToFragment(PrivacyFragment(), R.id.fragmentcontainer, bundle)
+
             }
 
             contactus.setOnClickListener {
-                startActivity(Intent(requireContext(),ContactFragment::class.java))
+                val bundle = Bundle().apply {
+                    putString("key", "About us")
+                }
+
+                navigateToFragment(ContactFragment(), R.id.fragmentcontainer, bundle)
+
             }
 
             aboutus.setOnClickListener {
-                val fragmentB = AboutFragment()
-                val bundle = Bundle()
-                bundle.putString("key", "Hello from Fragment A")
-                fragmentB.arguments = bundle
+                val bundle = Bundle().apply {
+                    putString("key", "About us")
+                }
 
-// Navigate to Fragment B (using FragmentTransaction or Navigation)
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentcontainer, fragmentB)
-                    .addToBackStack(null)
-                    .commit()
+                navigateToFragment(AboutFragment(), R.id.fragmentcontainer, bundle)
+
             }
 
         }
-
-
     }
+
+    fun navigateToFragment(fragment: Fragment, containerId: Int, args: Bundle? = null) {
+        fragment.arguments = args
+        parentFragmentManager.beginTransaction()
+            .replace(containerId, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
 }
