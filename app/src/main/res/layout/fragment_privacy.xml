@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".shareswithsomefrag.PrivacyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_9sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privaccy Policy for Gadi Dekho App"
+                android:textSize="@dimen/_25sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sourgummy"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/GadiPolicy"
+                android:fontFamily="@font/poppins"
+                android:layout_marginVertical="@dimen/_9sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Support Policy for Gadi Dekho App"
+                android:textSize="@dimen/_25sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sourgummy"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/GadiSupport"
+                android:fontFamily="@font/poppins"
+                android:layout_marginVertical="@dimen/_9sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Policy for Gadi Dekho App"
+                android:textSize="@dimen/_25sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sourgummy"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DataPolicy"
+                android:fontFamily="@font/poppins"
+                android:layout_marginVertical="@dimen/_9sdp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
