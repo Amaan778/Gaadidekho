@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GadiCustomer"
         tools:targetApi="31">
         <activity
+            android:name=".notify.Notification"
+            android:exported="false" />
+        <activity
             android:name=".profile.EditProfile"
             android:exported="false" />
         <activity

@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".shareswithsomefrag.RateFragment">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="@dimen/_8sdp"
+    app:cardBackgroundColor="@android:color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate Our App"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_gravity="center"
+            android:paddingBottom="10dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:layout_gravity="center"
+            android:paddingBottom="@dimen/_10sdp" />
+
+        <Button
+            android:id="@+id/btnRateNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            app:backgroundTint="@color/themecolor"
+            android:layout_margin="@dimen/_9sdp"
+            android:fontFamily="@font/sourgummy"
+            android:text="Rate Now"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/btnRateNow"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Rate Now" />-->
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,9 +1,15 @@
 package com.app.gadicustomer
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.RatingBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -54,11 +60,11 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             R.id.nav_favorite -> replaceFragment(FavoriteFragment(),"Favorite")
             R.id.nav_booking -> replaceFragment(BookingFragment(), "Booking")
             R.id.nav_profile->replaceFragment(ProfileFragment(),"Profile")
-            R.id.nav_share->replaceFragment(ShareFragment(),"Share")
-            R.id.nav_rate->replaceFragment(RateFragment(),"Rate Us")
+            R.id.nav_share->shareApp()
+            R.id.nav_rate->showRateUsDialog()
             R.id.nav_privacy->replaceFragment(PrivacyFragment(),"Privacy Policy")
             R.id.nav_contact->replaceFragment(ContactFragment(),"Contact us")
-            R.id.nav_about->replaceFragment(AboutFragment(),"About Us")
+            R.id.nav_about->showAboutDialog()
         }
         drawerlayout.closeDrawer(GravityCompat.START)
         return true
@@ -71,6 +77,73 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         transaction.commit()
         currentFragmentTag = tag
     }
+
+//    about us
+    private fun showAboutDialog() {
+
+        // Inflate the custom layout
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.fragment_about, null)
+
+        // Create AlertDialog and set the custom view
+        val alertDialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(false) // Prevent dismissal on outside touch
+            .create()
+
+//        / Remove the default dialog background
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        // Access views in the custom layout
+        val btn = dialogView.findViewById<TextView>(R.id.close)
+
+        btn.setOnClickListener {
+            alertDialog.dismiss() // Close dialog
+        }
+
+        // Show the dialog
+        alertDialog.show()
+    }
+
+    private fun shareApp() {
+        val appPackageName = packageName // Get your app's package name
+        val shareIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, "Check out this awesome app!")
+            putExtra(Intent.EXTRA_TEXT, "Hey! Download this amazing app:\nhttps://play.google.com/store/apps/details?id=$appPackageName")
+        }
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
+    }
+
+//    rate us
+
+    private fun showRateUsDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.fragment_rate, null)
+        val ratingBar = dialogView.findViewById<RatingBar>(R.id.ratingBar)
+        val btnRateNow = dialogView.findViewById<Button>(R.id.btnRateNow)
+
+        val alertDialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(true)
+            .create()
+
+        //        / Remove the default dialog background
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        btnRateNow.setOnClickListener {
+            val rating = ratingBar.rating
+            if (rating >= 4) {
+                // Redirect to Play Store for positive rating
+                Toast.makeText(this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show()
+            } else {
+                // Show feedback option for low rating
+                Toast.makeText(this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show()
+            }
+            alertDialog.dismiss()
+        }
+
+        alertDialog.show()
+    }
+
 
     override fun onBackPressed() {
         if (drawerlayout.isDrawerOpen(GravityCompat.START)) {
