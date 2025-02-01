@@ -165,7 +165,7 @@
                 android:layout_marginHorizontal="@dimen/_9sdp">
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/msg"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_150sdp"
                     android:inputType="textMultiLine"
@@ -177,7 +177,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/imagePickerButton"
+                android:id="@+id/btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn"
