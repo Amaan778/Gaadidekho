@@ -1,11 +1,13 @@
 package com.app.gadicustomer.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.app.gadicustomer.R
+import com.app.gadicustomer.notify.Notification
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
@@ -34,6 +37,7 @@ class HomeFragment : Fragment() {
     private lateinit var readpter:HomeAdapter
     private lateinit var databaseReference: DatabaseReference
     private lateinit var searchss: SearchView
+    private lateinit var notify:ImageView
 
     val db= Firebase.firestore
 
@@ -50,6 +54,7 @@ class HomeFragment : Fragment() {
 
         recyclerView=view.findViewById(R.id.recyler)
         searchss = view.findViewById(R.id.amaan)
+        notify=view.findViewById(R.id.notify)
 
         //        imageslider
         val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
@@ -113,6 +118,11 @@ class HomeFragment : Fragment() {
                 return true
             }
         })
+
+//        notification
+        notify.setOnClickListener {
+            startActivity(Intent(requireContext(),Notification::class.java))
+        }
 
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".shareswithsomefrag.ContactFragment">
 
@@ -117,6 +117,74 @@
                     android:fontFamily="@font/poppins"/>
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get in touch"
+                android:textSize="@dimen/_25sdp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_margin="@dimen/_9sdp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                android:layout_marginHorizontal="@dimen/_9sdp">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourgummy"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:layout_margin="@dimen/_9sdp">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourgummy"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descriptionInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your message"
+                app:endIconMode="custom"
+                android:layout_marginHorizontal="@dimen/_9sdp">
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:inputType="textMultiLine"
+                    android:minEms="1"
+                    android:gravity="top"
+                    android:fontFamily="@font/sourgummy"
+                    android:scrollbars="vertical"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/imagePickerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn"
+                app:backgroundTint="@color/themecolor"
+                android:layout_margin="@dimen/_9sdp"
+                android:fontFamily="@font/sourgummy"
+                android:text="Submit"/>
 
         </LinearLayout>
 
